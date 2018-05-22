@@ -1,5 +1,7 @@
 # How to run the project #
 
+#### Parsing apache access logs and running log analytics using Spark Job Server 
+
 ### Step1: Package the project
 ```
 sbt package
@@ -26,7 +28,7 @@ curl -d "" "127.0.0.1:8090/jobs?appName=geminidata&classPath=com.geminidata.logp
 ``` 
 curl -d "" "127.0.0.1:8090/jobs?appName=geminidata&classPath=com.geminidata.logparser.TopIpAddress&context=logs-context"
 ```
-### Step6: Run second job (HitsPerUrl)  using logs RDD created from step5
+### Step7: Run second job (HitsPerUrl)  using logs RDD created from step5
 ``` 
 curl -d "" "127.0.0.1:8090/jobs?appName=geminidata&classPath=com.geminidata.logparser.HitsPerUrl&context=logs-context"
 ```
