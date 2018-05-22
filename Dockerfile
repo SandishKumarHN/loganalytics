@@ -25,8 +25,9 @@ ENV SPARK_VERSION=2.2.0
 ENV HADOOP_VERSION=2.7
 
 RUN wget http://www-eu.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
-RUN cp spark-2.2.0-bin-hadoop2.7.tgz /opt/
-#ADD conf/spark-2.2.0-bin-hadoop2.7.tgz /opt/
+RUN tar -xvf spark-2.2.0-bin-hadoop2.7.tgz
+RUN mv spark-2.2.0-bin-hadoop2.7 /opt/
+RUN chmod 777 /opt/spark-2.2.0-bin-hadoop2.7
 
 RUN ln -s /opt/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} /spark
 
