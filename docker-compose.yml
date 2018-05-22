@@ -1,0 +1,13 @@
+version: '2'
+networks:
+  spark-net:
+    driver: bridge
+services:
+  loganalytics:
+    build:  .
+    hostname: localhost
+    ports:
+      - 8090:8090
+      - 9999:9999
+    networks:
+        - spark-net
